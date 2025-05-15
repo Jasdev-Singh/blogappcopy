@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Edit from "../img/iconedit.png"
 import Delete from "../img/delete.png"
-import {Link, Navigate, useLocation, useNavigate} from 'react-router-dom'
+import {Link, useLocation, useNavigate} from 'react-router-dom'
 import Menu from "../components/Menu"
 import axios from 'axios'
 import { AuthContext } from '../context/authContext'
@@ -37,6 +37,7 @@ const Single = () => {
   const handledelete = async()=>{
     try{
       const res = await axios.delete(`${backendurl}/api/posts/${postid}`)
+      console.log(res);
       navigate("/home")
     }catch(err)
     {

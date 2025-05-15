@@ -2,15 +2,13 @@ import './App.css';
 import {
   createBrowserRouter,
   RouterProvider,
-  Outlet,
+ 
 } from "react-router-dom";
 
 //import register page and others
 import Register from "./pages/Register"
 import Login from "./pages/Login"
 import Homepage from "./pages/Homepage"
-import Navbar from "./components/Navbar"
-import Footer from "./components/Footer"
 import Single from './pages/Single';
 import Write from "./pages/Write";
 
