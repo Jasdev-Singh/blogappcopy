@@ -1,0 +1,389 @@
+
+:colors{
+  --lightgreen : #b9e7e7;
+}
+.app{
+  display:flex ;
+  justify-content: center;
+  .container
+  {
+    width:1024px;   
+    
+    .link{
+      text-decoration: none;
+      color:inherit;
+    }
+    /*login and register*/
+  
+    .auth {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #b9e7e1;
+
+    h1{font-size: 20px;
+    color:teal;
+  margin-bottom: 20px;}
+  
+
+  form{
+    display: flex;
+    flex-direction: column;
+    padding:50px;
+    background-color: white;
+    width: 250px;
+    gap:20px;
+  
+
+  input{
+    padding: 10px;
+    border:none;
+    border-bottom: 1px solid gray;
+  }
+
+  button{
+    padding: 10px;
+    background-color: teal;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+p{
+  color:red;
+  font-size: 12px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+  span{
+    font-size: 12px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}
+    }
+
+/* styling navbar */
+.navbar{
+  .container{
+    padding: 0px 0px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+   
+
+    .logo{
+      img{
+        width: 120px;
+
+      }
+    }
+    .links{
+      display: flex;
+      gap:10px;
+     
+      align-items: center;
+    
+    h6{font-size: 16px;
+    font-weight: 300;}
+
+    span{cursor: pointer;}
+    .write{
+      background-color: #b9e7e1;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 300;
+      border:1px solid white;
+      &:hover{
+        color: teal;
+        background-color: white;
+        border:1px solid teal;
+      }
+    }
+  
+  }
+}
+}
+
+
+/* Footer styling */
+
+footer{
+  margin-top: 60px;
+  padding:20px;
+  background-color: #b9e7e1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+
+  img{
+    height: 60px;
+  }
+}
+
+/* Home page */
+.home{
+  .posts{
+    display: flex;
+    flex-direction: column;
+    gap:150px;
+  
+  .post{
+    display: flex;
+    gap:100px;
+    
+    /* if item no=odd, image on right */
+    &:nth-child(2n+1){
+      flex-direction: row-reverse;
+    }
+
+    .img{
+      flex:2;
+      position: relative;
+
+      &::after{
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: #b9e7e1;
+        position:absolute;   /* parent is relative one : .img*/
+        top:20px;
+        left:-20px;
+        z-index: -1;  /* put on back*/
+
+      }
+      img{
+        width:100%;
+        max-height: 400px;
+        object-fit: cover;
+      }
+    }
+
+    .content{
+      flex:3;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      h1{
+        font-size: 40px;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+      }
+
+      p{
+        font-size: 18px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+      }
+      button{
+        width: max-content;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        background-color: white;
+        border: 1px solid teal;
+        color: teal;
+
+        &:hover{
+          border: 1px solid white;
+          background-color: #b9e7e1;
+          color: black;
+        }
+      }
+    }
+  }
+}
+}
+
+
+/* styling single page*/
+.single{
+  display: flex;
+  gap:50px;
+
+  .content{
+    flex:5;
+    display: flex;
+    flex-direction: column;
+    
+
+    img{
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .user{
+      display: flex;
+      align-items: center;
+      gap:10px;
+      font-size: 14px;
+      img{
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .info{margin-top: 12px;}
+      span{font-weight: bold;}
+      p{margin-top: 4px;}
+
+  }
+.edit{
+  display: flex;
+  gap:5px;
+
+  img{
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    border:1px solid #b9e7e1;
+  }
+}
+
+h1{
+  color:#333;
+  font-size: 40px;
+}
+p{
+  text-align: justify;
+  line-height: 30px;
+}
+
+  }
+
+  .menu{
+    flex:2;
+    display: flex;
+    flex-direction: column;
+    gap:25px;
+     h1{
+      font-size: 16px;
+      color:#555;
+    
+     }
+     .post{
+      display: flex;
+      flex-direction: column;
+      gap:5px;
+
+      img{
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+      }
+
+    h2{color: #555;}
+    button{
+      width: max-content;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      background-color: white;
+      border: 1px solid teal;
+      color: teal;
+
+      &:hover{
+        border: 1px solid white;
+        background-color: #b9e7e1;
+        color: black;
+      }
+    }
+
+
+     }
+  }
+}
+
+
+/* write file*/
+
+.addwrite{
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+
+  .content{
+    flex:5;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    input{
+      padding: 10px;
+      border:1px solid lightgray;
+    }
+
+    .editorcontain{
+      height: 330px;
+      overflow: scroll;
+      border:1px solid lightgray;
+    }
+
+    .editor{
+      height: 100%;
+      border:none;
+    }
+  }
+
+  .menu{
+    flex:2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .item{border:1px solid lightgray;
+    padding:10px;
+  flex:1;
+  display: flex;
+flex-direction: column;
+justify-content: space-between;
+font-size: 12px;
+color:#555;
+
+h1{font-size: 20px;}
+
+.file{text-decoration: underline;
+  cursor: pointer;
+}
+
+.buttons{
+  display: flex;
+  justify-content: space-between;
+
+  :first-child{
+    cursor:pointer;
+    color:teal;
+    background-color: white;
+    border:1px solid teal;
+    padding: 3px 5px;
+  }
+
+  :last-child{
+    cursor:pointer;
+    color:white;
+    background-color: teal;
+    border:1px solid white;
+    padding: 3px 5px;
+  }
+}
+
+.cat{
+  display: flex;
+  align-items: center;
+  color:teal;
+  gap:2px;
+}
+}
+  }
+}
+
+  /* close main container and app*/
+}
+}
