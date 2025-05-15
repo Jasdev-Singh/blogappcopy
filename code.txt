@@ -1,0 +1,13 @@
+to start backend
+1. npm init -y
+2. npm install express mysql nodemon
+
+3. npm install bcryptjs   --for encrypting passwords
+
+4. npm intall axios   -- send data of form to api 
+5. npm install cors
+
+6. npm install jsonwebtoken   (for security) --backend
+7. npm install cookie-parser   --backend
+8. npm install moment   --frontend  (for handling date)
+9. npm install multer   --backend (for storing uploaded images files)
