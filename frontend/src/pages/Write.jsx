@@ -7,6 +7,7 @@ import {  useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useNavigate} from 'react-router-dom'
+
 import { backendurl } from '../context/authContext';
 
 const Write = () => {

@@ -24,6 +24,7 @@ const Single = () => {
       try{
         const res = await axios.get(`${backendurl}api/posts/${postid}`);
         setPost(res.data);
+       console.log(res);
       }catch(err)
       {
         console.log(err)
@@ -36,9 +37,12 @@ const Single = () => {
   //delete post
   const handledelete = async()=>{
     try{
+
       const res = await axios.delete(`${backendurl}/api/posts/${postid}`)
       console.log(res);
+
       navigate("/home")
+     
     }catch(err)
     {
       console.log(err)
