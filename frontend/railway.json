@@ -4,4 +4,8 @@
         "buildCommand" : "npm run build",
         "outputDirectory" : "dist"
     }
+    "start" :{
+    "command" :"npm run start",
+    "port" :8080
+    }
 }
