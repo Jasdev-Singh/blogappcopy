@@ -37,8 +37,10 @@ const Single = () => {
   //delete post
   const handledelete = async()=>{
     try{
-      const res = await axios.delete(`${backendurl}/api/posts/${postid}`)
+      const res = await axios.delete(`${backendurl}/api/posts/${postid}`);
+     console.log(res);
       navigate("/home")
+     
     }catch(err)
     {
       console.log(err)
