@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import axios from 'axios';
 export const AuthContext  = createContext()
-export const backendurl =  "http://localhost:8800"; 
+export const backendurl =  "https://blogappcopy.up.railway.app"; 
 
 export const AuthContextProvider = ({children}) =>{
     const [currentuser,setCurrentuser] = useState(JSON.parse(localStorage.getItem("user")) || null)
