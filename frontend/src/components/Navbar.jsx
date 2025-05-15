@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
 import Logo from "../img/bloglogo.png"
-import {Link, useNavigate} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import { AuthContext,logoutuser } from '../context/authContext';
 
 const Navbar = () => {
 //use context we create for user
   const {setCurrentuser,currentuser}= useContext(AuthContext);
-  const navigate = useNavigate();
+ // const navigate = useNavigate();
 
   const handlelogout=()=>{
     logoutuser();
