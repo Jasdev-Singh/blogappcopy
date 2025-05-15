@@ -19,7 +19,7 @@
   },
   "scripts": {
     "dev":"vite",
-    "start": "vite preview --port $PORT --host",
+    "start": "serve -s dist",
     "build": "vite build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
