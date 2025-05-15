@@ -10,7 +10,7 @@ dotenv.config();
 const app =express()
 
 
-const frontendurl = "blogappcopy-blogs.up.railway.app";
+const frontendurl = "https://blogappcopy-blogs.up.railway.app";
 
 
 app.use(express.json())
