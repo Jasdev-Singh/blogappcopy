@@ -9,7 +9,7 @@ import dotenv from 'dotenv'
 dotenv.config();
 const app =express()
 
-const frontendurl = "http://localhost:3000";
+const frontendurl = "blogappcopy-blogs.up.railway.app";
 
 app.use(express.json())
 app.use(cors());
