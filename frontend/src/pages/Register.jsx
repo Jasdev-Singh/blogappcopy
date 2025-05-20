@@ -2,7 +2,6 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import { backendurl } from '../context/authContext'
-
 const Register = () => {
 
   const [inputs,setInputs] =useState({
@@ -25,6 +24,11 @@ const Register = () => {
  //handle submit of form
  const handlesubmit = async e =>{
   e.preventDefault();
+   const form = e.target;
+  if (!form.checkValidity()) {
+    form.reportValidity(); // Show HTML5 validation errors
+    return;
+  }
  
   try {
  
@@ -43,20 +47,30 @@ const Register = () => {
  console.log(inputs)
  //create html code
   return (
-     <div className='auth'>
-     <h1>Register Here</h1>
-     <form>
-       <input required type="text" placeholder='username' name='username' onChange={handlechange}/>
-       <input required type="email" placeholder='email address' name='email' onChange={handlechange}/>
-       <input required type="password" placeholder='password' name='password' onChange={handlechange}/>
-       <button onClick={handlesubmit}> Register</button>
-    
-       {err && <p>{err}</p>}
-       <span>Do you have an account? <Link to="/">Login</Link></span>
-     </form>
- 
- 
-     </div>
+<div className="background">
+        <div className="contentforregisterpage">
+            <div className="form-container">
+                <h2>Register Yourself</h2>
+                <form onSubmit={handlesubmit}>
+                    <label htmlFor="username" className='loginwelcometext'>Username</label> 
+                    <input type="text" id="username" name="username"  onChange={handlechange} required/>
+
+                    <label htmlFor="email" className='loginwelcometext'>Email</label>
+                    <input type="email" id="email" name="email" onChange={handlechange} required />
+
+                    <label htmlFor="password" className='loginwelcometext'>Password</label>
+                    <input type="password" id="password" name="password" onChange={handlechange} required />
+
+                    <button   type='submit'> Register</button>
+  
+                </form>
+                
+                <div className="login-link">
+                    <span className='loginwelcometext'>Already have an account? <Link to="/">Login</Link></span>
+                </div>
+            </div>
+        </div>
+    </div>
    )
 }
 
