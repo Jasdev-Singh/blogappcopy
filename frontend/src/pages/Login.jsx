@@ -86,7 +86,6 @@ const [inputs,setInputs] =useState({
   </div>
   </div>
 
-
   )
 }
 
