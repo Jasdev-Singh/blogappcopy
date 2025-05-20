@@ -1,7 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import axios from 'axios';
 export const AuthContext  = createContext()
-
 export const backendurl="blogmazebackend.up.railway.app";
 
 export const AuthContextProvider = ({children}) =>{
