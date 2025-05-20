@@ -143,5 +143,4 @@ console.log(formattedDate);
     </>
   )
 }
-
 export default Write
