@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { backendurl } from '../context/authContext';
 const Menu = ({cat}) => {
-
    const [posts,setPosts] = useState([]);
 
   useEffect(()=>{
