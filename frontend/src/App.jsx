@@ -10,7 +10,6 @@ import Login from "./pages/Login"
 import Homepage from "./pages/Homepage"
 import Single from './pages/Single';
 import Write from "./pages/Write";
-
 const router = createBrowserRouter([
   {
     path: "/",
