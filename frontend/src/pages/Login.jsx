@@ -1,8 +1,9 @@
-
+import axios from 'axios'
 import React, { useContext, useState } from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import { AuthContext } from '../context/authContext'
-
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 const Login = () => {
 
 const [inputs,setInputs] =useState({
@@ -31,10 +32,8 @@ const [inputs,setInputs] =useState({
  
   try {
  await login(inputs)
-  //await axios.post(`${backendurl}/api/auth/login`,inputs)
-  //navigate to login page
+ 
   navigate("/home");
-
   }
   catch(err)
   {
@@ -48,18 +47,46 @@ const [inputs,setInputs] =useState({
 
 
   return (
-    <div className='auth'>
-    <h1>Login</h1>
-    <form>
-      <input type="text" placeholder='username' name='username' onChange={handlechange}/>
-      <input type="password" placeholder='password' name='password' onChange={handlechange}/>
-      <button onClick={handlesubmit}> Login</button>
-     {err &&<p>{err}</p>}
-      <span>Don't you have an account? <Link to="/register">Register</Link></span>
-    </form>
 
-
+  
+  
+   <div  classNameName="loginbody">
+   <div  className="containerforlogin">
+    <div  className="left-panel">
+      <h1>WELCOME</h1>
+      <h2>Insightful Content, Every Day.</h2>
+      <p className='loginwelcometext'>"Your ideas belong here — explore, express, and engage with thoughtful blogs from around the world."</p>
     </div>
+    <div  className="right-panel">
+      <form  className="login-form">
+        <h2 className='loginwelcometext'>Login</h2>
+        <p className='loginwelcometext'>Join trending topics, and share your stories.</p>
+
+        <div  className="input-group">
+          <label>
+            <input type="text" placeholder="User Name" required name='username' onChange={handlechange}/>
+          </label>
+        </div>
+
+        <div  className="input-group">
+          <label>
+          
+            <input type="password" placeholder="Password" required name='password' onChange={handlechange}/>
+          </label>
+        </div>
+
+        <button type="submit"  className="btn-primary" onClick={handlesubmit}>Login</button>
+        {err &&<p>{err}</p>}
+
+        <p  className="signup-text">
+          <span className='loginwelcometext'>Don't you have an account? <Link to="/register">Register</Link></span>
+        </p>
+      </form>
+    </div>
+  </div>
+  </div>
+
+
   )
 }
 
