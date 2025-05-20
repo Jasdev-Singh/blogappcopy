@@ -53,7 +53,7 @@ const [inputs,setInputs] =useState({
    <div  classNameName="loginbody">
    <div  className="containerforlogin">
     <div  className="left-panel">
-      <h1>WELCOME</h1>
+      <h1>WELCOME TO BLOGMAZE</h1>
       <h2>Insightful Content, Every Day.</h2>
       <p className='loginwelcometext'>"Your ideas belong here — explore, express, and engage with thoughtful blogs from around the world."</p>
     </div>
