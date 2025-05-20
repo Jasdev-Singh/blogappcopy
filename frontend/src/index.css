@@ -1,143 +1,432 @@
 
-:colors{
-  --lightgreen : #b9e7e7;
-}
-.app{
-  display:flex ;
-  justify-content: center;
-  .container
-  {
-    width:1024px;   
-    
-    .link{
-      text-decoration: none;
-      color:inherit;
-    }
-    /*login and register*/
-  
-    .auth {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      background-color: #b9e7e1;
-
-    h1{font-size: 20px;
-    color:teal;
-  margin-bottom: 20px;}
-  
-
-  form{
-    display: flex;
-    flex-direction: column;
-    padding:50px;
-    background-color: white;
-    width: 250px;
-    gap:20px;
-  
-
-  input{
-    padding: 10px;
-    border:none;
-    border-bottom: 1px solid gray;
-  }
-
-  button{
-    padding: 10px;
-    background-color: teal;
-    border: none;
-    color: white;
-    cursor: pointer;
-  }
-p{
-  color:red;
-  font-size: 12px;
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-}
-  span{
-    font-size: 12px;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-}
-    }
 
 /* styling navbar */
 .navbar{
   .container{
-    padding: 0px 0px;
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 0px 0px; display:flex; justify-content: space-between; align-items: center; margin-right: 20px; margin-left: 20px;
+
+    /*.logohome{
+      display:flex; flex-direction: column;
+      img{
+        width: 120px; 
+      }
+     
+    }*/
+
+    .logohome{display: flex; justify-content: center; align-items: center; gap :4px; cursor: pointer;} 
+     .homelogo{width:20px; height:20px; margin-top: 3px;}
+      .mainlogo{
+        width: 120px; 
+      }
+   .link{
+      text-decoration: none; color:inherit;
+        }
+
+    .links{
+      display: flex; gap:10px; align-items: center; 
+    
+    h6{font-size: 14px; font-weight: 300;  display: inline; padding: 5px; 
+
+    }
+
+    h6:hover{
+    
+      background-color: #bbd9ef;
+    }
+.navseparator{margin-right: 5px;}
+ 
+
+    .lasth6{border:none;}
+
 
    
+.userlogo{width:15px;height:15px; }
+.navbaruserdata{gap:5px; display: flex; align-items: center; justify-content: center; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif}
 
-    .logo{
-      img{
-        width: 120px;
 
-      }
-    }
-    .links{
-      display: flex;
-      gap:10px;
-     
-      align-items: center;
-    
-    h6{font-size: 16px;
-    font-weight: 300;}
+        /* logout button*/
+.logout-button {
+   background-color: white; color: #0056b3 ; border: none; padding: 10px 18px; font-size: 16px;
+  border-radius: 6px; cursor: pointer;border: 1px solid #0056b3 ;
+}
 
-    span{cursor: pointer;}
-    .write{
-      background-color: #b9e7e1;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 300;
-      border:1px solid white;
-      &:hover{
-        color: teal;
-        background-color: white;
-        border:1px solid teal;
-      }
-    }
+.logout-button:hover {
   
+ background-color: rgb(234, 232, 232); border: none; color:black;
+   
+}
+    span{cursor: pointer;}
+    .writebutton{ background-color: #1c7cc5; padding: 10px 18px; font-size: 16px;
+      border-radius: 6px; cursor: pointer;border: 1px solid #0056b3 ; color: white; opacity: 0.85;
+    &:hover{
+     opacity: 1;
+    }}
   }
 }
 }
 
 
-/* Footer styling */
-
+/* ---------------------------------------- styling footer ------------------------------ */
 footer{
-  margin-top: 60px;
-  padding:20px;
-  background-color: #b9e7e1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 12px;
+  margin-top: 20px; padding:18px 20px;background-color: #1c7cc5; display: flex; justify-content: space-between;  align-items: center; font-size: 12px; 
+  img{
+    height: 70px;
+  }
+}
+
+/* ---------------------------------- login page ---------------------------------------*/
+
+#root{
+    margin: 0; padding: 0; overflow: hidden; /* Prevent scrolling */
+     height: 100%; width: 100%;
+}
+* {
+  box-sizing: border-box;
+}
+.containerforlogin {
+  display: flex; width:100vw; height: 100vh;
+}
+
+/* Left Panel */
+.left-panel {
+  flex: 1; background: linear-gradient(135deg, #5382cd, #0056b3); color: white; padding: 60px 40px; position: relative;
+  display: flex; flex-direction: column; justify-content: center; border-top-right-radius: 0; border-bottom-right-radius: 0; 
+
+}
+
+.loginwelcometext{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Welcome circles (decorative) */
+.left-panel::before,
+.left-panel::after {
+  content: ''; position: absolute; border-radius: 50%; background: rgba(255, 255, 255, 0.1); z-index: 0; pointer-events: none;
+}
+
+.left-panel::before {
+  width: 150px; height: 150px; top: 17%; left: 10%;
+}
+
+.left-panel::after {
+  width: 200px; height: 200px; bottom: 12%;left: 40%;
+}
+
+.left-panel h1 {
+  font-size: 36px; margin-bottom: 10px;  z-index: 1;
+}
+
+.left-panel h2 {
+  font-size: 20px; margin-bottom: 20px; z-index: 1;
+}
+
+.left-panel p {
+  font-size: 14px; max-width: 80%; line-height: 1.6; z-index: 1;
+}
+
+/* Right Panel */
+.right-panel {
+  flex: 1;padding: 40px;display: flex;justify-content: center; align-items: center; background: rgb(220, 235, 252);
+}
+
+
+/* Login Form */
+.login-form {
+  width: 100%;max-width: 320px;
+}
+
+.login-form h2 {
+  margin-bottom: 10px;
+}
+
+.login-form p {
+  font-size: 14px; margin-bottom: 20px;color: #666;
+}
+
+.input-group {
+  position: relative;margin-bottom: 16px; width: 100%;
+}
+
+.input-group input {
+  width: 100%; padding: 10px 40px 10px 10px;border: 1px solid #ccc;  border-radius: 5px; box-sizing: border-box;
+}
+
+.input-group i {
+  position: absolute; left: 10px; top: 50%;  transform: translateY(-50%);
+}
+
+.input-group .show-password {
+  position: absolute; right: 10px;  top: 50%;
+  transform: translateY(-50%); cursor: pointer; font-size: 12px;  color: #007bff;
+}
+
+/* Buttons */
+.btn-primary,
+.btn-secondary {
+  width: 100%; padding: 10px; border-radius: 5px;border: none; font-size: 16px; cursor: pointer; margin-bottom: 10px;
+}
+
+.btn-primary {
+  background-color: #007bff;  color: white;
+}
+
+.btn-secondary {
+  background-color: white;  border: 1px solid #ccc;
+}
+
+.signup-text {
+  text-align: center; font-size: 14px;margin-top: 10px;
+}
+
+.signup-text a {
+  color: #007bff;text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+/*------------------------------------- registartion page-----------------------------------------*/
+
+.background {
+   background: linear-gradient(135deg, #007bff, #0056b3);  display: flex;  justify-content: center;  align-items: center;
+    height: 100vh; width:100vw; position: relative;
+}
+
+
+.contentforregisterpage {
+    display: flex; justify-content: center; align-items: center;
+    width: 100%; height: 100%;
+}
+
+.form-container {
+    background-color: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px; text-align: center;
+}
+
+.form-container h2 {
+    font-size: 24px; margin-bottom: 20px;
+}
+
+.form-container label {
+    display: block; font-size: 14px; margin-bottom: 8px; text-align: left;
+}
+
+.form-container input {
+    width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-container button {
+    width: 100%;padding: 12px; background-color: #3D63F2; color: white; border: none; border-radius: 5px; font-size: 16px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #4C6EF5;
+}
+
+.login-link {
+    margin-top: 10px; font-size: 14px;
+}
+
+.login-link a {
+    color: #3D63F2; text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+.contentforregisterpage::before,
+.contentforregisterpage::after {
+  content: ''; position: absolute;  border-radius: 50%;  background: rgba(255, 255, 255, 0.1);
+  z-index: 0;  pointer-events: none;
+}
+
+.contentforregisterpage::before {
+  width: 150px; height: 150px; top: 20%; left: 10%;
+}
+
+.contentforregisterpage::after {
+  width: 200px; height: 200px; bottom: 30%; left: 80%;
+}
+
+
+/* ---------------------------------------- write page  ------------------------------------------- */
+.addwrite{
+  margin-top: 20px;  margin-bottom: 0px; display: flex;  gap: 20px; 
+ 
+  .content{
+    flex:5;   display: flex;   flex-direction: column;   gap: 15px;
+
+    input{
+      padding: 10px;  border:1px solid lightgray;
+    }
+
+    .editorcontain{
+      height: 292px; overflow: scroll;  border:1px solid lightgray;
+    }
+
+    .editor{
+      height: 100%; border:none;
+    }
+  }
+
+  .menu{
+    flex:2;display: flex; flex-direction: column; gap: 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    .item{border:1px solid lightgray;  padding:10px; flex:1; display: flex;
+flex-direction: column; justify-content: space-between; font-size: 12px; color:#555; padding-top:0px;
+
+h1{font-size: 20px;}
+
+.file{text-decoration: underline;  cursor: pointer;
+}
+
+.buttons{
+  display: flex; justify-content: center; align-items: center;
+
+  :first-child{
+     background-color:  #1c7cc5; color: white; border: none; padding: 10px 14px; font-size: 14px;
+  border-radius: 1px; cursor: pointer;border: 1px solid #0056b3 ;
+  &:hover{
+    opacity: 0.9;
+  }
+  }
+
+}
+ 
+
+
+.cat{
+  display: flex; align-items: center; color:#0c4a87; gap:3px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+}
+
+#publishbutton{
+  border:none;
+}
+  }
+}
+
+/* --------------------------------------------------single page ---------------------------------------------- */
+/* styling single page*/
+.single{
+  display: flex;  gap:50px; margin-left: 6px;  margin-right: 10px; width:100%; height:100%;
+
+  .content{
+    flex:5;  display: flex; flex-direction: column; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+
+    img{
+      width: 100%;  height: 300px;  object-fit: cover;
+    }
+    .user{
+      display: flex; align-items: center; gap:10px; font-size: 14px;
+    img{
+        width: 45px; height: 45px;border-radius: 50%; object-fit: cover;
+      }
+
+      .info{padding-top: 15px;}
+      span{font-weight: bold; }
+      p{margin-top: 0px;}
+
+  }
+.edit{
+  display: flex; gap:5px;
 
   img{
-    height: 60px;
+    width: 22px; height: 22px; cursor: pointer; border:1px solid #1c7cc5;
   }
 }
 
-/* Home page */
+  h1{
+  color:#333; font-size: 24px;  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+    }
+   p{
+  text-align: justify; line-height: 30px;
+   }
+}
+
+  .menu{
+    flex:2; display: flex; flex-direction: column; gap:20px;
+     h1{
+      font-size: 14px; color:#555;
+     }
+     .post{
+      display: flex; flex-direction: column; gap:5px;
+      img{
+        width: 100%;  height: 150px;  object-fit: cover;
+      }
+    h2{color: #555; font-size: 20px;}
+    button{
+      width: max-content; padding: 8px 16px; border: none; cursor: pointer; background-color: white;
+      border: 1px solid #0c4a87; color: #0c4a87;
+      &:hover{
+        border: 1px solid white; background-color: #1c7cc5; color: white;
+      }
+    }
+     }
+  }
+}
+
+.titledata{display: flex;justify-content: space-between;align-items: center; width:100%;}
+
+.titledata{
+  h1{
+    width:65%;
+
+  }
+}
+
+.readtext{padding: 8px;border-radius: 5px; border: 1px solid gray;
+ &:hover{
+        border: 1px solid white; background-color: #1c7cc5; color: white; cursor: pointer;
+      }}
+
+.summary-read-btn{gap:20px;  display: flex;justify-content: space-between;align-items: center;}
+/*----------------- summary popup ----------------------*/
+*
+.popup {
+  position: fixed; top: 20%;left: 50%; transform: translateX(-50%); background: rgb(255, 255, 255);
+  padding: 0px;  border: 0.5px solid black;  box-shadow: 3px 3px 10px rgba(0,0,0,0.5);  z-index: 999;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; scale:0.8;
+}
+
+.summarizebtn{
+  padding: 9.5px 10px ;border-radius: 5px; border: 1px solid gray;
+   &:hover{
+        border: 1px solid white; background-color: #1c7cc5; color: white; cursor: pointer;
+      }
+}
+.popupclose{
+   padding: 10px 20px;  border: none; cursor: pointer;background-color: white;
+        border: 1px solid #0c4a87; color: #0c4a87;
+
+        &:hover{
+          border: 1px solid white; background-color: #1c7cc5; color: white;
+        }
+}
+.closebtnpopup{
+   display: flex; align-items: center; justify-content: center; margin-bottom: 10px;
+}
+.summarytitle{ 
+  background-color: #2e7fbd; color: white; border: 1px solid #2e7fbd; padding-left: 10px; 
+
+}
+.summarydesc{padding: 0px 30px; font-size:14px; line-height: 0.3; }
+
+/* ----------------------------------------- styling homepage -------------------------------------------*/
 .home{
+   margin-left: 6px;  margin-right: 10px; width:100%; height:100%; padding-left: 40px; padding-right: 40px; margin-top: 16px; margin-bottom: 40px;
   .posts{
-    display: flex;
-    flex-direction: column;
-    gap:150px;
+    display: flex;flex-direction: column; gap:120px;
+   
+   
   
   .post{
-    display: flex;
-    gap:100px;
+    display: flex; gap:60px;
     
     /* if item no=odd, image on right */
     &:nth-child(2n+1){
@@ -145,245 +434,72 @@ footer{
     }
 
     .img{
-      flex:2;
-      position: relative;
+      flex:2; position: relative;
 
       &::after{
         content: "";
-        width: 100%;
-        height: 100%;
-        background-color: #b9e7e1;
-        position:absolute;   /* parent is relative one : .img*/
-        top:20px;
-        left:-20px;
-        z-index: -1;  /* put on back*/
+        width: 350px;  height: 250px;background:linear-gradient(135deg, #6d1fd3, #0056b3,#5382cd,#bbd9ef,#83c4c6,#f0f26e,#f7c767,#e74c1d,#922c0d);    filter: blur(5px); opacity: 0.9; position:absolute; 
+        
+         /* parent is relative one : .img*/
+        top:5px; left:-5px; z-index: -1;  /* put on back*/
 
       }
       img{
-        width:100%;
-        max-height: 400px;
-        object-fit: cover;
+        width:350px; height:250px; max-height: 350px; object-fit: cover;
       }
     }
 
     .content{
-      flex:3;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      flex:3; display: flex; flex-direction: column; justify-content: space-between;
 
       h1{
-        font-size: 40px;
-        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+        font-size: 34px;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
       }
 
       p{
-        font-size: 18px;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+        font-size: 16px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       }
       button{
-        width: max-content;
-        padding: 10px 20px;
-        border: none;
-        cursor: pointer;
-        background-color: white;
-        border: 1px solid teal;
-        color: teal;
+        width: max-content;   padding: 10px 20px;  border: none; cursor: pointer;background-color: white;
+        border: 1px solid #0c4a87; color: #0c4a87;
 
         &:hover{
-          border: 1px solid white;
-          background-color: #b9e7e1;
-          color: black;
+          border: 1px solid white; background-color: #1c7cc5; color: white;
         }
       }
     }
   }
 }
 }
-
-
-/* styling single page*/
-.single{
-  display: flex;
-  gap:50px;
-
-  .content{
-    flex:5;
-    display: flex;
-    flex-direction: column;
-    
-
-    img{
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-    }
-    .user{
-      display: flex;
-      align-items: center;
-      gap:10px;
-      font-size: 14px;
-      img{
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        object-fit: cover;
-      }
-
-      .info{margin-top: 12px;}
-      span{font-weight: bold;}
-      p{margin-top: 4px;}
-
-  }
-.edit{
-  display: flex;
-  gap:5px;
-
-  img{
-    width: 22px;
-    height: 22px;
-    cursor: pointer;
-    border:1px solid #b9e7e1;
-  }
-}
-
-h1{
-  color:#333;
-  font-size: 40px;
-}
-p{
-  text-align: justify;
-  line-height: 30px;
-}
-
-  }
-
-  .menu{
-    flex:2;
-    display: flex;
-    flex-direction: column;
-    gap:25px;
-     h1{
-      font-size: 16px;
-      color:#555;
-    
-     }
-     .post{
-      display: flex;
-      flex-direction: column;
-      gap:5px;
-
-      img{
-        width: 100%;
-        height: 150px;
-        object-fit: cover;
-      }
-
-    h2{color: #555;}
-    button{
-      width: max-content;
-      padding: 10px 20px;
-      border: none;
-      cursor: pointer;
-      background-color: white;
-      border: 1px solid teal;
-      color: teal;
-
-      &:hover{
-        border: 1px solid white;
-        background-color: #b9e7e1;
-        color: black;
-      }
+    .link{
+      text-decoration: none; color:inherit;
+      
     }
 
 
-     }
-  }
+
+#gettouch{
+  color:white; font-weight: bold; font-size: 12px;
+
 }
 
-
-/* write file*/
-
-.addwrite{
-  margin-top: 20px;
-  display: flex;
-  gap: 20px;
-
-  .content{
-    flex:5;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-
-    input{
-      padding: 10px;
-      border:1px solid lightgray;
-    }
-
-    .editorcontain{
-      height: 330px;
-      overflow: scroll;
-      border:1px solid lightgray;
-    }
-
-    .editor{
-      height: 100%;
-      border:none;
-    }
-  }
-
-  .menu{
-    flex:2;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-
-    .item{border:1px solid lightgray;
-    padding:10px;
-  flex:1;
-  display: flex;
-flex-direction: column;
-justify-content: space-between;
-font-size: 12px;
-color:#555;
-
-h1{font-size: 20px;}
-
-.file{text-decoration: underline;
-  cursor: pointer;
+.footerdata{
+  display: flex; align-items: center; justify-content: center; gap:20px;
 }
+.logoimg{
+  display: flex;  align-items: center; justify-content: center; gap:10px;
+}
+#linkedin{width:41px;height:41px; opacity: 0.8;   &:hover{
+    opacity: 1;
+  }}
+#fb{width:30px;height:30px; opacity: 0.8;  &:hover{
+    opacity: 1;
+  }}
+#gmail{width:35px;height:35px; opacity: 0.8;  &:hover{
+    opacity: 1;
+  }}
 
-.buttons{
-  display: flex;
-  justify-content: space-between;
 
-  :first-child{
-    cursor:pointer;
-    color:teal;
-    background-color: white;
-    border:1px solid teal;
-    padding: 3px 5px;
-  }
-
-  :last-child{
-    cursor:pointer;
-    color:white;
-    background-color: teal;
-    border:1px solid white;
-    padding: 3px 5px;
-  }
-}
-
-.cat{
-  display: flex;
-  align-items: center;
-  color:teal;
-  gap:2px;
-}
-}
-  }
-}
-
-  /* close main container and app*/
-}
-}
+.desctextonsinglepage{font-size: 14px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;}
