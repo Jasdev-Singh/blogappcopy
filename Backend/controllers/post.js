@@ -1,5 +1,4 @@
 import {db} from "../db.js";
-import jwt from "jsonwebtoken"
 export const getPosts = (req,res) =>{
     const q = req.query.cat ? "SELECT * FROM posts WHERE cat= ?" : "SELECT * FROM posts";
     db.query(q,[req.query.cat], (err,data)=>{
@@ -12,7 +11,7 @@ export const getPosts = (req,res) =>{
 //fetch data to show on single page
 export const getPost = (req,res) =>{
     //find post using its id, join users table to get username
-    const q = "SELECT  p.id,`username`,`title`,`desc`,p.img,u.img AS userimg,`cat`,`date` FROM users u JOIN posts p ON u.id = p.uid WHERE p.id = ?"
+    const q = "SELECT u.id as userid, p.id,`username`,`title`,`desc`,p.img,u.img AS userimg,`cat`,`date` FROM users u JOIN posts p ON u.id = p.uid WHERE p.id = ?"
     db.query(q,[req.params.id],(err,data)=>{
         if (err) return res.status(500).json(err);
 
@@ -24,12 +23,14 @@ export const getPost = (req,res) =>{
 export const addPost = (req,res) =>{
 
 
-    const q = 'INSERT INTO posts(`title`,`desc`,`img`,`cat`,`date`) values (?)'
+    const q = 'INSERT INTO posts(`title`,`desc`,`img`,`cat`,`date`,`uid`) values (?)'
+    
     const values = [req.body.title,
         req.body.desc,
         req.body.img,
         req.body.cat,
         req.body.date,
+        req.body.uid,
        
     ]
 
@@ -41,21 +42,14 @@ export const addPost = (req,res) =>{
 };
 
 export const deletePost = (req,res) =>{
-    /*
-   const token = req.cookies.access_token
-   if(!token) return res.status(401).json("Not Authenticated")
-
-//verify token
-jwt.verify(token,"jwtkey",(err,userinfo)=>{
-    if (err) return res.status(403).json("Token is Invalid!")
-*/
     const postid=req.params.id
-    const q  = 'DELETE FROM posts WHERE `id` = ?' // AND `uid` =?'
-    db.query(q,[postid],(err,data)=>{
+    const q  = 'DELETE FROM posts WHERE `id` = ?; UPDATE posts SET `id` = `id`-1 where `id` > ?; set @nextId := (select IFNULL(max(id),0)+1 from blog.posts); set @sql := CONCAT("alter table blog.posts AUTO_INCREMENT= " , @nextId); PREPARE stmt FROM @sql; EXECUTE stmt; DEALLOCATE PREPARE stmt;' ; 
+    db.query(q,[postid,postid],(err,data)=>{
         if (err) return res.status(403).json("You can delete only your post!");
 
         return res.json("Post has been deleted")
     })
+    
 };
 export const updatePost = (req,res) =>{
 
