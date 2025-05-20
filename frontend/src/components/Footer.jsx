@@ -3,7 +3,6 @@ import Logo from "../img/blogmainlogo_white.png"
 import fb from "../img/fblogo.png"
 import gmail from "../img/gmaillogo.png"
 import linkedin from "../img/linkedinlogo.png"
-
 const Footer = () => {
   return (
     <footer>
