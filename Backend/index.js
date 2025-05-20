@@ -5,7 +5,6 @@ import userroutes from "./routes/users.js"
 import cors from "cors"
 import cookieParser from "cookie-parser"
 import multer from "multer";
-
 const app =express()
 const frontendurl="Blogmaze.up.railway.app";
 
