@@ -5,18 +5,14 @@ import userroutes from "./routes/users.js"
 import cors from "cors"
 import cookieParser from "cookie-parser"
 import multer from "multer";
-import dotenv from 'dotenv'
-dotenv.config();
+
 const app =express()
-
-
-const frontendurl = "https://blogappcopy-blogs.up.railway.app";
-
+const frontendurl="http://localhost:3000";
 
 app.use(express.json())
 app.use(cors());
 app.use(cookieParser())
-app.use(cors({origin : `${frontendurl}`, credentials:true}));
+app.use(cors({origin : frontendurl, credentials:true}));
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -40,6 +36,6 @@ app.use("/api/auth",authroutes)
 app.use("/api/posts",postroutes)
 app.use("/api/users",userroutes)
 
-app.listen(process.env.PORT || 8800,()=>{
+app.listen(8800,()=>{
     console.log("connected");
 })
