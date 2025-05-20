@@ -8,7 +8,6 @@ const Navbar = () => {
 //use context we create for user
   const {setCurrentuser,currentuser}= useContext(AuthContext);
   const navigate = useNavigate();
-
   const handlelogout=()=>{
     logoutuser();
     setCurrentuser(null);
