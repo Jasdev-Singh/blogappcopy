@@ -170,7 +170,7 @@ const [summary, setSummary] = useState('');
         </div>
       )}
       </div> 
-     
+    
       <Menu cat={post.cat}/>
     </div>
 
