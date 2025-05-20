@@ -2,7 +2,6 @@ import './App.css';
 import {
   createBrowserRouter,
   RouterProvider,
-
 } from "react-router-dom";
 
 //import register page and others
@@ -12,63 +11,29 @@ import Homepage from "./pages/Homepage"
 import Single from './pages/Single';
 import Write from "./pages/Write";
 
-/*
-//create a layout (navbar and footer)
-const Layout =() =>{
-  return(
-    <>
-    <Navbar/>
-    <Outlet/>
-    <Footer/>
-    </>
-  );
-};*/
-
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Login/>,
   },
-    {
-      path:"/home",
-      element:<Homepage/>
-      },
-      {
-        path:"/post/:id",
-        element:<Single/>
-      },
-      {
-        path:"/write",
-        element:<Write/>
-      },
-     
-  
   {
     path: "/register",
     element: <Register/>,
   },
   {
-    path: "/",
-    element: <Login/>,
+    path: "/home",
+    element: <Homepage/>,
   },
-
-]);
- /*
-    children: [
-      {
-      path:"/home",
-      element:<Homepage/>
-      },
-      {
+   {
         path:"/post/:id",
         element:<Single/>
       },
       {
         path:"/write",
         element:<Write/>
-      }
-    ]*/
+      },
 
+]);
 function App() {
   return (
     <div className="app">
@@ -78,8 +43,4 @@ function App() {
     </div>
   );
 }
-
-
-
-
 export default App;
