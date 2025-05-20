@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react'
 import {Link, useLocation} from 'react-router-dom'
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-
 import { backendurl } from '../context/authContext';
+
 
 const Homepage = () => {
 
@@ -27,58 +27,28 @@ const Homepage = () => {
 
   },[cat]);  //whenever we change cat it will call this useeffect
 
-  /*
-const posts =[
-{
-  id:1,
-  title: "Lorem ibpum there is a sample data we eill store ",
-  desc: "Lorem ibpum there is a sample data we eill storeLorem ibpum there is a sample data we eill storeLorem ibpum there is a sample data we eill storeLorem ibpum there is a sample data we eill store",
-  img:"https://images.pexels.com/photos/6348018/pexels-photo-6348018.jpeg?auto=compress&cs=tinysrgb&w=600"
+ 
+const getText = (html) =>{
+  const doc = new DOMParser().parseFromString(html,"text/html")
+  return doc.body.textContent
+
+
 }
-];
-,
-{
-  id:2,
-  title: "Lorem ibpum there is a sample data we eill store ",
-  desc: "Lorem ibpum there is a sample data we eill storeLorem ibpum there is a sample data we eill storeLorem ibpum there is a sample data we eill storeLorem ibpum there is a sample data we eill store",
-  img:"https://images.pexels.com/photos/6348018/pexels-photo-6348018.jpeg?auto=compress&cs=tinysrgb&w=600"
-},
-{
-  id:3,
-  title: "Lorem ibpum there is a sample data we eill store ",
-  desc: "Lorem ibpum there is a sample data we eill storeLorem ibpum there is a sample data we eill storeLorem ibpum there is a sample data we eill storeLorem ibpum there is a sample data we eill store",
-  img:"https://images.pexels.com/photos/6348018/pexels-photo-6348018.jpeg?auto=compress&cs=tinysrgb&w=600"
-},
-{
-  id:4,
-  title: "Lorem ibpum there is a sample data we eill store ",
-  desc: "Lorem ibpum there is a sample data we eill storeLorem ibpum there is a sample data we eill storeLorem ibpum there is a sample data we eill storeLorem ibpum there is a sample data we eill store",
-  img:"https://images.pexels.com/photos/6348018/pexels-photo-6348018.jpeg?auto=compress&cs=tinysrgb&w=600"
-},
-{
-  id:5,
-  title: "Lorem ibpum there is a sample data we eill store ",
-  desc: "Lorem ibpum there is a sample data we eill storeLorem ibpum there is a sample data we eill storeLorem ibpum there is a sample data we eill storeLorem ibpum there is a sample data we eill store",
-  img:"https://images.pexels.com/photos/6348018/pexels-photo-6348018.jpeg?auto=compress&cs=tinysrgb&w=600"
-},
-
-];
-*/
   return (
-
     <>
-    <Navbar />
+      <Navbar/>
+  
     <div className='home'>
     <div className='posts'>
       {posts.map(post=>(
           <div className='post' key={post.id}>
             <div className="img"> 
-            <img src={`../upload/${post.img}`} alt="" />
+            <img src= {`../upload/${post.img}`} alt="You have not uploaded any image yet" /> 
             </div>
             <div className="content"> 
             <Link className='link' to={`/post/${post.id}`}>
-              <h1>{post.title}</h1>
-              <p>{post.desc}</p>
+              <h1><i>{post.title}</i></h1>
+              <p>  {getText(post.desc.slice(0,400))}...</p>
               <button>Read More</button>
             </Link>
             </div>
@@ -88,8 +58,8 @@ const posts =[
       }
     </div>
     </div>
-    <Footer/>
-    </>
+      <Footer/>
+      </>
   )
 }
 
