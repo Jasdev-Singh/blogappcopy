@@ -6,7 +6,7 @@ import cors from "cors"
 import cookieParser from "cookie-parser"
 import multer from "multer";
 const app =express()
-const frontendurl="Blogmaze.up.railway.app";
+const frontendurl="blogmaze-site.up.railway.app";
 
 app.use(express.json())
 app.use(cors());
